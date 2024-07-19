@@ -1,0 +1,92 @@
+<header class="ddd container-fluid headers ">
+    <nav id=" dd desktop-nav">
+        <div class="logo">
+            <img src="/images/logo_tb_icon.png" class="logo1" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ul>
+
+        <form class="d-flex">
+            <button routerLink="/login" class="btn btn-outline-dark round-button mx-2" type="button" *ngIf="!loggedIn">Connexion</button>
+            <button routerLink="/register" class="btn btn-secondary round-button" type="button" *ngIf="!loggedIn" >Inscription</button>
+            <button routerLink="/profile" class="btn btn-secondary round-button" type="button" *ngIf="loggedIn">profile</button>
+        </form>
+    </nav>
+</header>
+<div class="container-fluid">
+    <div class="container-fluid job container">
+        <div class="container pt-0 m-5 ">
+            <div class="row">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="job-detail.html"></a>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="col-4" style="color: green;">
+                                                    <i class="fa fa-map-marker" aria-hidden="true"></i> Cocody
+                                                </div>
+                                            </div>
+                                            <div style="color: green;" class="col-12">
+                                                <h6 class="pointer" style="margin-bottom: 0;">Ali
+                                                    Dabo</h6>
+                                                <a>Rafistoleur</a>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="col-7 text-end">
+                                            <button class="btn btn-outline-dark round-button mx-2" type="button">Contactez
+                                                nous</button>
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+<div class="wrapper">
+	<main>
+		<!-- Your main content goes here -->
+	</main>
+	<footer class="footer">
+		<div class="container">		
+			<div class="row text-center">						
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<div class="footer_menu">
+						<ul>
+							<li><a href="home">Accueil</a></li>
+							<li><a href="#about">À propos</a></li>
+							<li><a href="#contact">Contacts</a></li>
+						</ul>
+					</div>						
+					<div class="footer_copyright">
+						<p>© 2024 Ali Dabo. Tous les droits sont reserves.</p>
+					</div>	
+					<div class="footer_profile">
+						<ul>
+							<li><a href="https://github.com/"><i class="fab fa-github"></i></a></li>
+							<li><a href="https://wa.me/2550710145864"><i class="fa fa-whatsapp"></i></a></li>
+							<li><a href="mailto:alsondab9@gmail.com"><i class="fa fa-envelope"></i></a></li>
+							<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+						</ul>
+					</div>						
+				</div>				
+			</div>			
+		</div>
+	</footer>
+</div>

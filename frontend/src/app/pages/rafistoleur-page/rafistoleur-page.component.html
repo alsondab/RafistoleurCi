@@ -1,0 +1,90 @@
+<header class="ddd container-fluid headers ">
+  <nav id=" dd desktop-nav">
+      <div class="logo">
+          <img src="/images/logo_tb_icon.png" class="logo1" alt="">
+      </div>
+      <ul class="nav-links">
+          <li><a href="#home">visitez le cite</a></li>
+      </ul>
+
+      <form class="d-flex">
+          <button routerLink="/admin-log" class="btn btn-outline-dark round-button mx-2" type="button" *ngIf="loggedIn" >Connexion</button>
+          <button routerLink="/admin-sign" class="btn btn-outline-dark round-button mx-2"type="button" *ngIf="!loggedIn" >Add Admin</button>
+          <button routerLink="/admin" class="btn btn-secondary round-button" type="button"*ngIf="!loggedIn" >profile</button>
+          <button href="" class="btn btn-outline-dark round-button mx-2" type="button" (click)="logout($event)"  *ngIf="!loggedIn">Logout</button>
+      </form>
+  </nav>
+</header>
+<div class="mt-5 container">
+  <div class="card">
+    <div class="card-header">
+      <h4>
+        Rafistoleur Listing
+        <a routerLink="/rafistoleurs/create" class="btn btn-primary float-end">Add Rafistoleur</a>
+      </h4>
+    </div>
+    <div class="card-body">
+      <div *ngIf="isLoading; else elseTableBlock">
+        <app-loader></app-loader>
+      </div>
+      <ng-template #elseTableBlock>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Location</th>
+              <th>Telephone</th>
+              <th>Created At</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of rafistoleurs">
+              <td>{{ item.id }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.location }}</td>
+              <td>{{ item.tel }}</td>
+              <td>{{ item.created_at }}</td>
+              <td>
+                <a routerLink="/rafistoleurs/{{ item.id }}/edit" class="btn btn-success">Edit</a>
+                <button type="button" class="btn btn-danger" (click)="deleteRafistoleur(item.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+	<main>
+		<!-- Your main content goes here -->
+	</main>
+	<footer class="footer">
+		<div class="container">		
+			<div class="row text-center">						
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<div class="footer_menu">
+						<ul>
+							<li><a href="home">Accueil</a></li>
+						</ul>
+					</div>						
+					<div class="footer_copyright">
+						<p>© 2024 Ali Dabo. Tous les droits sont reserves.</p>
+					</div>	
+					<div class="footer_profile">
+						<ul>
+							<li><a href="https://github.com/"><i class="fab fa-github"></i></a></li>
+							<li><a href="https://wa.me/2550710145864"><i class="fa fa-whatsapp"></i></a></li>
+							<li><a href="mailto:alsondab9@gmail.com"><i class="fa fa-envelope"></i></a></li>
+							<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+						</ul>
+					</div>						
+				</div>				
+			</div>			
+		</div>
+	</footer>
+</div>

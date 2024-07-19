@@ -1,0 +1,89 @@
+<header class="ddd container-fluid headers ">
+    <nav id=" dd desktop-nav">
+        <div class="logo">
+            <img  routerLink="/admin-log" src="/images/logo_tb_icon.png" class="logo1" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ul>
+
+        <form class="d-flex">
+            <button routerLink="/login" class="btn btn-outline-dark round-button mx-2" type="button" *ngIf="!loggedIn">Connexion</button>
+            <button href="#" (click)="logout($event)" class="btn btn-outline-dark round-button mx-2" type="button" *ngIf="loggedIn">Logout</button>
+            <button routerLink="/register" class="btn btn-secondary round-button" type="button" *ngIf="!loggedIn" >Inscription</button>
+            <button routerLink="/profile" class="btn btn-secondary round-button" type="button" *ngIf="loggedIn">profile</button>
+        </form>
+    </nav>
+</header>
+<div id="home" class="mt-5 container-fluid">
+    <div class="header">
+        <h1>Ne perdez plus de temps</h1>
+        <div>trouvez le rafistoleur qu'il vous faut et laissez votre problème de couture derrière vous !</div>
+    </div>
+    <div *ngIf="loggedIn" class="Wrapper">
+        <div>
+            <div class="logoContainer">
+                <img src="https://static.naukimg.com/s/7/103/i/search.9ec0e1ac.svg" id="searchIcon">
+                <input type="text" placeholder="Où habitez-vous?" id="input1">
+                <input type="submit" class="search" value="Search" routerLink="/listraf">
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</div>
+
+<section id="about" class="mb-5 pb-5 container-fluid">
+    <p class="section__text__p1">Explorer</p>
+    <h1 class="title">Notre Engagement</h1>
+    <div class="about-containers">
+        <div class="details-container">
+            <h2 class="experience-sub-title">À Propos de Nous</h2>
+            <p class="text">
+                Bienvenue sur Rafistoleurs, l'application qui révolutionne la manière dont les couturiers et les
+                clients se rencontrent en Côte d'Ivoire. Notre mission est de faciliter le processus de mise en relation
+                entre les rafistoleurs – artisans talentueux spécialisés dans la réparation et la personnalisation de
+                vêtements – et les clients à la recherche de leurs services.
+            </p>
+        </div>
+        <div class="details-container">
+            <h2 class="experience-sub-title">Notre Vision</h2>
+            <p class="text">
+                Nous croyons que chaque vêtement mérite une seconde vie et chaque artisan mérite d'être reconnu pour
+                son savoir-faire. Notre application est conçue pour rendre la recherche de rafistoleurs plus simple et
+                plus rapide, tout en offrant aux couturiers une plateforme moderne pour se faire connaître et trouver
+                de nouveaux clients.
+            </p>
+        </div>
+    </div>
+</section>
+
+<br>
+
+<section id="contact" class="mt-5 mb-5 pb-5 container-fluid">
+    <p class="section__text__p1">Un commentaire?</p>
+    <h1 class="title">Contactez nous</h1>
+    <div class="contact-info-upper-container">
+        <div class="feedback-container">
+            <form class="feedback-form" (ngSubmit)="sendFeedback()">
+                <div class="form-group">
+                    <label for="name" class="experience-sub-titles">Nom</label>
+                    <input placeholder="Entrer votre Nom" type="text" id="name" name="name" [(ngModel)]="feedback.name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="experience-sub-titles">Email</label>
+                    <input placeholder="Entrer votre Email" type="email" id="email" name="email" [(ngModel)]="feedback.email" required>
+                </div>
+                <div class="form-group">
+                    <label for="feedback" class="experience-sub-titles">Votre avis</label>
+                    <textarea placeholder="Donnez Votre avis" id="feedback" name="message" [(ngModel)]="feedback.message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<br><br><br><br>
+<app-footer></app-footer>

@@ -1,0 +1,23 @@
+<header class="ddd container-fluid headers ">
+    <nav id=" dd desktop-nav">
+        <div class="logo">
+            <img src="/images/logo_tb_icon.png" class="logo1" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ul>
+
+        <form class="d-flex">
+            <button routerLink="/login" class="btn btn-outline-dark round-button mx-2" type="button" *ngIf="!loggedIn">Connexion</button>
+            <button routerLink="/register" class="btn btn-secondary round-button" type="button" *ngIf="!loggedIn" >Inscription</button>
+            <button routerLink="/profile" class="btn btn-secondary round-button" type="button" *ngIf="loggedIn">profile</button>
+        </form>
+    </nav>
+</header>
+
+<div class="container-fluid">
+    <p>profile works!</p>
+</div>
+<app-footer></app-footer>

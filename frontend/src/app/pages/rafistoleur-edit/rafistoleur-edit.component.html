@@ -1,0 +1,49 @@
+<div>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header">
+          <h4>Rafistoleur Edit
+            <a routerLink="/rafistoleurs" class="btn btn-danger float-end">
+              Back
+            </a>
+          </h4>
+        </div>
+        <div class="card-body">
+          <div *ngIf="isLoading; else elseForm">
+            <app-loader [title]="LoadingTitle"></app-loader> 
+          </div>
+          <ng-template #elseForm>
+            <div *ngIf="rafistoleur">
+              <form *ngIf="rafistoleur" (ngSubmit)="updateRafistoleur()">
+                <div class="mb-3">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" name="name" [(ngModel)]="rafistoleur.name" required>
+                  <span *ngIf="errors.name" class="text-danger">{{errors.name}}</span>
+                </div>
+                <div class="mb-3">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" name="email" [(ngModel)]="rafistoleur.email" required>
+                  <span *ngIf="errors.email" class="text-danger">{{errors.email}}</span>
+                </div>
+                <div class="mb-3">
+                  <label for="location">Location</label>
+                  <input type="text" class="form-control" name="location" [(ngModel)]="rafistoleur.location" required>
+                  <span *ngIf="errors.location" class="text-danger">{{errors.location}}</span>
+                </div>
+                <div class="mb-3">
+                  <label for="tel">Tel</label>
+                  <input type="text" class="form-control" name="tel" [(ngModel)]="rafistoleur.tel" required>
+                  <span *ngIf="errors.tel" class="text-danger">{{errors.tel}}</span>
+                </div>
+                <div class="mb-3">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-danger ms-2" (click)="deleteRafistoleur()">Delete</button>
+                </div>
+              </form>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+  
